@@ -80,7 +80,7 @@ function AttendanceCalculator() {
         <h2>Attendance Calculator Prediction</h2>
         {subjects.map((subject, index) => (
           <div className="input" key={index}>
-            <hr />
+            {/* <hr /> */}
             <h3>{subject.name}</h3>
             <div className="input1">
               <div>
@@ -113,11 +113,18 @@ function AttendanceCalculator() {
               </div>
             </div>
             <p className="result">
-              Minimum classes to attend for 75% attendance:{" "}
-              <span id="result">{subject.minClassesToAttend}</span>
+              Attendance: <span id="result">{subject.avgAttendance}%</span>
             </p>
             <p className="result">
-              Attendance: <span id="result">{subject.avgAttendance}%</span>
+              {subject.minClassesToAttend < 0 ? (
+                <span id="result">
+                  You can leave {Math.abs(subject.minClassesToAttend)} classes.
+                </span>
+              ) : (
+                <span id="result1">
+                  You have to attend {subject.minClassesToAttend} classes.
+                </span>
+              )}
             </p>
           </div>
         ))}
