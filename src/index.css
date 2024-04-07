@@ -84,3 +84,14 @@ button:hover {
   border-radius: 55px;
   /* margin-bottom: 25px; */
 }
+
+@media (max-width: 786px) {
+  .card {
+    width: 330px;
+  }
+
+  .input label {
+    font-size: 13px;
+  }
+
+}
